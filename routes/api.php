@@ -2,6 +2,7 @@
 
 /* use App\Http\Controllers\AuthController; */
 
+use App\Http\Controllers\AccountController;
 use App\Http\Controllers\ArlController;
 use App\Http\Controllers\AsistenciaController;
 use App\Http\Controllers\AuthController;
@@ -52,7 +53,14 @@ use App\Http\Controllers\AppointmentCancellationCausalController;
 use App\Http\Controllers\CancellationCausalController;
 use App\Http\Controllers\RegimeController;
 use App\Http\Controllers\LevelController;
-
+use App\Http\Controllers\ContractController;
+use App\Http\Controllers\BenefitsPlanController;
+use App\Http\Controllers\PriceListController;
+use App\Http\Controllers\PaymentMethodController;
+use App\Http\Controllers\TecnicNoteController;
+use App\Http\Controllers\CashController;
+use App\Http\Controllers\BankController;
+use App\Http\Controllers\ThirdPartieController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -191,7 +199,34 @@ Route::group(
 		//Level
 		Route::resource('levels', LevelController::class);
 		Route::get('paginateLevel', [levelController::class, 'paginate']);
-		
+		//Contract
+		Route::resource('contracts', ContractController::class);
+		Route::get('paginateContract', [ContractController::class, 'paginate']);
+		//Benefits_plan
+		Route::resource('benefits_plans', BenefitsPlanController::class);
+		Route::get('paginateBenefitsPlan', [BenefitsPlanController::class, 'paginate']);
+		//Price List
+		Route::resource('price_lists', PriceListController::class);
+		Route::get('paginatePriceList', [PriceListController::class, 'paginate']);
+		//Payment Method
+		Route::resource('payment_methods', PaymentMethodController::class);
+		Route::get('paginatePaymentMethod', [PaymentMethodController::class, 'paginate']);
+		//Tecnic Note
+		Route::resource('tecnic_notes', TecnicNoteController::class);
+		Route::get('paginateTecnicNote', [TecnicNoteController::class, 'paginate']);
+		//Cash
+		Route::resource('cashes', CashController::class);
+		Route::get('paginateCash', [CashController::class, 'paginate']);
+		//Bank
+		Route::resource('banks', BankController::class);
+		Route::get('paginateBank', [BankController::class, 'paginate']);
+		//Third_parties
+		Route::resource('third_parties', ThirdPartieController::class);
+		Route::get('paginateThirdPartie', [ThirdPartieController::class, 'paginate']);
+		//Account
+		Route::resource('accounts', AccountController::class);
+		Route::get('paginateAccount', [AccountController::class, 'paginate']);
+
 		Route::resource('municipalities', MunicipalityController::class);
 		Route::resource('jobs', JobController::class);
 		Route::resource('disability-leaves', DisabilityLeaveController::class);
